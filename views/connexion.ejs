@@ -1,0 +1,46 @@
+<% var active = 'connexion' %>
+<% include partials/header.ejs %>
+
+<section class="section" style="border-bottom:none; padding-top:56px; padding-bottom:80px;">
+  <div class="container" style="max-width:480px;">
+    <span class="file-tag" style="margin-bottom:18px; display:inline-block;">ACCÈS RESTREINT</span>
+    <h1 style="font-size:1.9rem;">Connexion agent</h1>
+    <p style="margin-bottom:28px;">
+      Saisissez votre indicatif et votre code d'accès personnel délivré par le
+      Bureau. Toute tentative avec un code invalide est journalisée et refusée.
+    </p>
+
+    <% if (error) { %>
+      <div class="callout" style="border-color:var(--alert); background:rgba(156,59,59,0.1); margin-top:0; margin-bottom:24px;">
+        <p style="color:var(--alert-bright); margin:0;"><%= error %></p>
+      </div>
+    <% } %>
+
+    <form action="/connexion" method="POST" class="panel" style="display:grid; gap:16px;">
+      <div>
+        <label for="callsign" style="display:block; font-family:var(--mono); font-size:0.7rem; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:6px;">INDICATIF / NOM D'AGENT</label>
+        <input
+          type="text" id="callsign" name="callsign" value="<%= callsign %>"
+          placeholder="ex : Agent Dubois"
+          style="width:100%; padding:12px 14px; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); color:var(--text); font-family:var(--sans); font-size:0.95rem;"
+        />
+      </div>
+      <div>
+        <label for="code" style="display:block; font-family:var(--mono); font-size:0.7rem; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:6px;">CODE D'ACCÈS</label>
+        <input
+          type="password" id="code" name="code" required autofocus
+          placeholder="••••••••"
+          style="width:100%; padding:12px 14px; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); color:var(--text); font-family:var(--mono); font-size:0.95rem; letter-spacing:0.1em;"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:4px;">Valider mon habilitation</button>
+    </form>
+
+    <p style="font-size:0.82rem; margin-top:24px;">
+      Vous n'avez pas encore de code d'accès ?
+      <a href="/recrutement">Consultez la page recrutement</a>.
+    </p>
+  </div>
+</section>
+
+<% include partials/footer.ejs %>

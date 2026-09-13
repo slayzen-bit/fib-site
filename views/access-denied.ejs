@@ -1,0 +1,37 @@
+<% include partials/header.ejs %>
+
+<div class="denied-wrap">
+  <div class="denied-card">
+    <span class="denied-stamp"><%= reason === 'not-found' ? 'INTROUVABLE' : 'ACCÈS REFUSÉ' %></span>
+    <h2 style="margin-top:6px;">
+      <% if (reason === 'not-found') { %>
+        Ce dossier n'existe pas
+      <% } else if (reason === 'no-auth') { %>
+        Authentification requise
+      <% } else { %>
+        Habilitation insuffisante
+      <% } %>
+    </h2>
+    <p>
+      <% if (reason === 'not-found') { %>
+        La page demandée n'existe pas ou a été déplacée.
+      <% } else if (reason === 'no-auth') { %>
+        Vous devez saisir un code d'accès valide pour consulter cet espace.
+        Cette section est strictement réservée aux citoyens habilités par le Bureau.
+      <% } else { %>
+        Votre niveau d'habilitation (<%= clearance %>) ne permet pas d'accéder à cette
+        section, réservée au commandement.
+      <% } %>
+    </p>
+    <div class="hero-actions" style="justify-content:center; margin-top:26px;">
+      <a href="/" class="btn btn-ghost">Retour à l'accueil</a>
+      <% if (reason === 'no-auth') { %>
+        <a href="/connexion" class="btn btn-primary">Saisir mon code d'accès</a>
+      <% } else { %>
+        <a href="/recrutement" class="btn btn-primary">Voir le recrutement</a>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer.ejs %>

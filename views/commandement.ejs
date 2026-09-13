@@ -1,0 +1,54 @@
+<% var active = 'commandement' %>
+<% include partials/header.ejs %>
+
+<section class="section" style="border-bottom:none; padding-top:48px;">
+  <div class="container">
+    <span class="command-mark">NIVEAU COMMANDEMENT — DIFFUSION RESTREINTE</span>
+
+    <div class="clearance-banner" style="border-color:var(--alert); background:rgba(156,59,59,0.1);">
+      <span class="dot" style="background:var(--alert-bright);"></span>
+      <span>Habilitation la plus élevée confirmée — <strong><%= user.name %></strong></span>
+    </div>
+
+    <div class="section-head">
+      <h2>État-major</h2>
+      <span class="file-tag">ACCÈS COMMANDEMENT UNIQUEMENT</span>
+    </div>
+    <p style="margin-bottom:32px;">
+      Ce niveau n'est visible que par les détenteurs du code Commandement. Il regroupe
+      les décisions stratégiques, la gestion des effectifs et le suivi disciplinaire.
+    </p>
+
+    <div class="panel-grid">
+      <div class="panel">
+        <span class="k">EFFECTIFS</span>
+        <h3 style="margin-top:8px;">Gestion des agents</h3>
+        <ul>
+          <li>Validation des recrutements en attente</li>
+          <li>Suivi des promotions et rétrogradations</li>
+          <li>Registre disciplinaire</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="k">STRATÉGIE</span>
+        <h3 style="margin-top:8px;">Opérations sensibles</h3>
+        <ul>
+          <li>Coordination inter-divisions</li>
+          <li>Autorisations d'opérations spéciales</li>
+          <li>Relations avec les autres agences RP</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="k">GOUVERNANCE</span>
+        <h3 style="margin-top:8px;">Administration du Bureau</h3>
+        <ul>
+          <li>Mise à jour des procédures internes</li>
+          <li>Revue mensuelle des divisions</li>
+          <li>Rapport d'activité à la direction du serveur</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include partials/footer.ejs %>

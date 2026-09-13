@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="47" fill="none" stroke="#b8924f" stroke-width="2"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#b8924f" stroke-width="1"/>
+  <polygon points="50,26 56,44 75,44 60,55 65,73 50,62 35,73 40,55 25,44 44,44"
+           fill="#b8924f" opacity="0.9"/>
+  <text x="50" y="16" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+        font-size="6.5" fill="#e7ebf1" letter-spacing="1">FEDERAL</text>
+  <text x="50" y="92" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+        font-size="6.5" fill="#e7ebf1" letter-spacing="1">BUREAU</text>
+</svg>

@@ -1,0 +1,71 @@
+<% var active = 'recrutement' %>
+<% include partials/header.ejs %>
+
+<section class="hero" style="padding-bottom:40px;">
+  <div class="container">
+    <span class="kicker">DOSSIER PUBLIC N°FIB-014 — RECRUTEMENT</span>
+    <h1>Devenir agent du Bureau</h1>
+    <p class="lede">
+      Le FIB recrute en continu des candidats capables d'enquêter, de tenir une ligne
+      de conduite exemplaire en roleplay, et de s'intégrer à une hiérarchie stricte.
+      À l'issue de la sélection, un code d'accès personnel vous est délivré pour
+      entrer dans l'espace agent.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Conditions d'éligibilité</h2>
+      <span class="file-tag">SECTION 01</span>
+    </div>
+    <ul class="req-list">
+      <li>Être actif sur le serveur RP depuis au moins 2 semaines.</li>
+      <li>N'avoir aucune sanction RP en cours au moment de la candidature.</li>
+      <li>Maîtriser les bases du roleplay judiciaire et policier (procédures, langage radio).</li>
+      <li>Être disponible pour un entretien avec un membre du commandement.</li>
+      <li>Conserver son code d'accès strictement confidentiel après validation.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Grades et progression</h2>
+      <span class="file-tag">SECTION 02</span>
+    </div>
+    <table class="grade-table">
+      <thead>
+        <tr><th>Grade</th><th>Niveau</th><th>Accès portail</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cadet</td><td>Formation</td><td>Aucun accès agent</td></tr>
+        <tr><td>Agent spécial</td><td>Terrain</td><td>Espace agent</td></tr>
+        <tr><td>Superviseur</td><td>Encadrement</td><td>Espace agent</td></tr>
+        <tr><td>Direction / Commandement</td><td>État-major</td><td>Espace agent + Commandement</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none;">
+  <div class="container">
+    <div class="section-head">
+      <h2>Déposer une candidature</h2>
+      <span class="file-tag">SECTION 03</span>
+    </div>
+    <p>
+      Les candidatures se déposent exclusivement sur notre serveur Discord, dans le
+      salon prévu à cet effet. Aucune candidature par un autre canal ne sera traitée.
+    </p>
+    <div class="callout">
+      <h3 style="margin-bottom:8px;">Prêt à postuler ?</h3>
+      <p style="margin-bottom:18px;">Rejoignez le serveur Discord du FIB pour déposer votre dossier de candidature.</p>
+      <a href="<%= applyUrl %>" target="_blank" rel="noopener" class="btn btn-primary">Ouvrir le formulaire de candidature</a>
+    </div>
+  </div>
+</section>
+
+<% include partials/footer.ejs %>

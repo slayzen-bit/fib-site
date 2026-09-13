@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container letterhead">
+      <a href="/" class="brand" style="text-decoration:none;">
+        <img src="/img/seal.svg" alt="Sceau du FIB" class="seal" />
+        <div class="brand-text">
+          <span class="agency">GOUVERNEMENT — DÉPARTEMENT DE LA JUSTICE</span>
+          <div class="name">Federal Investigation Bureau</div>
+          <span class="baseline">Portail officiel — serveur roleplay</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+
+      <nav class="main-nav">
+        <a href="/" class="<%= typeof active !== 'undefined' && active === 'accueil' ? 'active' : '' %>">Accueil</a>
+        <a href="/recrutement" class="<%= typeof active !== 'undefined' && active === 'recrutement' ? 'active' : '' %>">Recrutement</a>
+        <% if (user) { %>
+          <a href="/espace-agent" class="<%= typeof active !== 'undefined' && active === 'agent' ? 'active' : '' %>">Espace agent</a>
+          <% if (user.clearance === 'COMMANDEMENT') { %>
+            <a href="/commandement" class="<%= typeof active !== 'undefined' && active === 'commandement' ? 'active' : '' %>">Commandement</a>
+          <% } %>
+          <div class="user-chip">
+            <div>
+              <span class="who"><%= user.name %></span>
+              <span class="badge"><%= user.clearance %></span>
+            </div>
+          </div>
+          <a href="/deconnexion" class="nav-cta">Déconnexion</a>
+        <% } else { %>
+          <a href="/connexion" class="nav-cta">Connexion agent</a>
+        <% } %>
+      </nav>
+    </div>
+  </header>

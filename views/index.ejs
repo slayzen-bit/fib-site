@@ -1,0 +1,69 @@
+<% var active = 'accueil' %>
+<% include partials/header.ejs %>
+
+<section class="hero">
+  <div class="container">
+    <span class="kicker">DOSSIER PUBLIC N°FIB-000 — ACCÈS LIBRE</span>
+    <h1>La loi ne dort jamais.<br/>Le Bureau non plus.</h1>
+    <p class="lede">
+      Le Federal Investigation Bureau enquête sur le crime organisé, la corruption
+      et les affaires fédérales sur l'ensemble du territoire. Ce portail centralise
+      les communications publiques du Bureau et l'accès sécurisé réservé aux agents.
+    </p>
+    <div class="hero-actions">
+      <a href="/recrutement" class="btn btn-primary">Rejoindre le Bureau</a>
+      <a href="/connexion" class="btn btn-ghost">Connexion agent</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="stat-strip">
+      <div><div class="num">04</div><div class="lbl">Divisions actives</div></div>
+      <div><div class="num">24/7</div><div class="lbl">Permanence opérationnelle</div></div>
+      <div><div class="num">01</div><div class="lbl">Chaîne de commandement</div></div>
+      <div><div class="num">2</div><div class="lbl">Niveaux d'habilitation</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Missions du Bureau</h2>
+      <span class="file-tag">SECTION 01</span>
+    </div>
+    <div class="dossier-grid">
+      <div class="dossier" data-code="DIV-A">
+        <h3>Criminalité organisée</h3>
+        <p>Démantèlement des réseaux structurés opérant sur le territoire : trafics, racket et blanchiment.</p>
+      </div>
+      <div class="dossier" data-code="DIV-B">
+        <h3>Affaires fédérales</h3>
+        <p>Enquêtes visant les infractions relevant directement de la compétence fédérale du Bureau.</p>
+      </div>
+      <div class="dossier" data-code="DIV-C">
+        <h3>Anti-corruption</h3>
+        <p>Surveillance de l'intégrité des institutions et des agents publics du territoire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none;">
+  <div class="container">
+    <div class="section-head">
+      <h2>Accès agents</h2>
+      <span class="file-tag">SECTION 02 — RESTREINT</span>
+    </div>
+    <p>
+      L'espace agent et le niveau commandement sont réservés aux détenteurs d'un
+      code d'accès délivré par le Bureau. Un citoyen sans code valide ne peut
+      consulter aucune page protégée.
+    </p>
+    <div class="hero-actions">
+      <a href="/connexion" class="btn btn-primary">Saisir mon code d'accès</a>
+    </div>
+  </div>
+</section>
+
+<% include partials/footer.ejs %>

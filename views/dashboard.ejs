@@ -1,0 +1,60 @@
+<% var active = 'agent' %>
+<% include partials/header.ejs %>
+
+<section class="section" style="border-bottom:none; padding-top:48px;">
+  <div class="container">
+    <div class="clearance-banner">
+      <span class="dot"></span>
+      <span>Habilitation vérifiée — <strong><%= user.name %></strong> · niveau <strong><%= user.clearance %></strong></span>
+    </div>
+
+    <div class="section-head">
+      <h2>Espace agent</h2>
+      <span class="file-tag">ACCÈS RESTREINT</span>
+    </div>
+    <p style="margin-bottom:32px;">
+      Cet espace est réservé aux détenteurs d'un code d'accès valide. Retrouvez ici
+      les informations utiles à vos opérations courantes.
+    </p>
+
+    <div class="panel-grid">
+      <div class="panel">
+        <span class="k">BULLETIN DU JOUR</span>
+        <h3 style="margin-top:8px;">Consignes générales</h3>
+        <ul>
+          <li>Rédiger un rapport pour toute intervention terminée.</li>
+          <li>Signaler toute anomalie à un superviseur avant fin de service.</li>
+          <li>Respecter la chaîne de commandement en toute circonstance.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="k">DOSSIERS EN COURS</span>
+        <h3 style="margin-top:8px;">Affaires ouvertes</h3>
+        <ul>
+          <li>Enquête réseau — statut : en cours</li>
+          <li>Surveillance ciblée — statut : en attente de validation</li>
+          <li>Audit interne — statut : classé</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="k">RESSOURCES</span>
+        <h3 style="margin-top:8px;">Procédures</h3>
+        <ul>
+          <li>Code de conduite de l'agent</li>
+          <li>Protocole d'intervention</li>
+          <li>Modèle de rapport standard</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="k">MON PROFIL</span>
+        <h3 style="margin-top:8px;">Identité vérifiée</h3>
+        <ul>
+          <li>Indicatif : <%= user.name %></li>
+          <li>Niveau d'habilitation : <%= user.clearance %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include partials/footer.ejs %>
