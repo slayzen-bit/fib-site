@@ -13,8 +13,23 @@ const {
   APPLY_URL = "#",
 } = process.env;
 
-const AGENT_LIST = AGENT_CODES.split(",").map((s) => s.trim()).filter(Boolean);
-const COMMAND_LIST = COMMAND_CODES.split(",").map((s) => s.trim()).filter(Boolean);
+// Nettoie une valeur de variable d'environnement : enlève les espaces et
+// les guillemets qu'on colle parfois par erreur autour de la valeur.
+function cleanEnvValue(s) {
+  return s.trim().replace(/^["']|["']$/g, "");
+}
+
+// Les codes sont comparés en MAJUSCULES pour éviter les erreurs de
+// connexion à cause d'une simple différence de casse (ex: agent-2547
+// tapé au lieu de AGENT-2547 doit quand même fonctionner).
+const AGENT_LIST = AGENT_CODES.split(",")
+  .map((s) => cleanEnvValue(s).toUpperCase())
+  .filter(Boolean);
+const COMMAND_LIST = COMMAND_CODES.split(",")
+  .map((s) => cleanEnvValue(s).toUpperCase())
+  .filter(Boolean);
+
+console.log(`[FIB] ${AGENT_LIST.length} code(s) agent chargé(s), ${COMMAND_LIST.length} code(s) commandement chargé(s).`);
 
 // ---------- Config de base ----------
 app.set("view engine", "ejs");
@@ -39,7 +54,7 @@ app.use((req, res, next) => {
 // ---------- Détermination du niveau d'habilitation à partir d'un code ----------
 function clearanceForCode(code) {
   if (!code) return null;
-  const clean = code.trim();
+  const clean = code.trim().toUpperCase();
   if (COMMAND_LIST.includes(clean)) return "COMMANDEMENT";
   if (AGENT_LIST.includes(clean)) return "AGENT";
   return null; // code invalide -> citoyen, jamais connecté
