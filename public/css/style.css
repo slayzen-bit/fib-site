@@ -282,3 +282,4 @@ p { color: var(--text-muted); max-width: 66ch; }
   text-align: center; padding: 14px 24px; border-top: 1px solid var(--border-soft);
   letter-spacing: 0.04em;
 }
+top-banner { position: relative; height: 320px; background-image: url("/img/top-banner.jpg"); background-size: cover; background-position: center 35%; } .top-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,31,0.25) 0%, rgba(10,18,31,0.8) 65%, var(--ink) 100%); } @media (max-width: 700px) { .top-banner { height: 200px; } }
